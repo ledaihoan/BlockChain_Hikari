@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hikari Team develop Blockchain in FunctionxHanoi">
+    <meta name="author" content="Hoan_Developer;Van_Desinger;Thao_BusinessAnalyst;Lien_BusinessAnalyst;Kien_Developer">
+
+    <title>Hikari Team</title>
+
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <link href="../dist/css/index.css" rel="stylesheet">
+	
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a  href="index.html">
+					<img src="../images/icon/HikariLogo.png" class="img-rounded" alt="Cinque Terre"  height="50">
+				</a>
+				
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="center">
+                            <div class="input-group imgBoyUser">
+                                <img src="../images/icon/BoyUser.png" class="img-rounded" alt="Cinque Terre"  style="width:100%" data-toggle="modal" data-target="#modalIAddr">
+                            </div>
+                        </li>
+						<li>
+							<a href="#">
+								<div class="center">
+									<i class="fa fa-money"></i> <b id="txtIBalance">  </b>
+								</div>
+							</a>
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> Profile<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="flot.html" data-toggle="modal" data-target="#modalILogOut"> Log out </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="profile.html"><i class="fa fa-money fa-fw"></i> Coin<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="profile.html"> Transaction </a>
+                                </li>
+                                <li>
+                                    <a href="#"> Convert </a>
+                                </li>
+                            </ul>
+                        </li>
+						<li>
+                            <a href="OnlinePayment.html"><i class="fa fa-cubes fa-fw"></i> Online payment</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Transaction history</a>
+                        </li>
+						<li>
+                            <a href="#"><i class="fa fa-level-up fa-fw"></i> Customer rank</a>
+                        </li>
+						<li>
+                            <a href="#"><i class="fa fa-gear fa-fw"></i> Order management</a>
+                        </li>
+						<li>
+                            <a href="#"><i class="fa fa-credit-card fa-fw"></i> Lending</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Coint</h1>
+                </div>
+            </div>
+            <div id="divPMessage" class="form-group" role="alert"></div>
+            <div class="row">
+                <div class="col-xs-4">
+                    Total: <label id="txtPTotal"></label>
+                </div>
+                <div class="col-xs-4">
+                    From: <label id="txtPFrom"></label>
+                </div>
+                <div class="col-xs-4">
+                    To: <label id="txtPTo"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Transaction list
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <label id="txtPTotal"></label>
+                                </div>
+                                <div class="col-xs-4">
+                                    <label id="txtPFrom"></label>
+                                </div>
+                                <div class="col-xs-4">
+                                    <label id="txtPTo"></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <table width="100%" class="table table-striped table-bordered table-hover" id="tblPTransactionList">
+                                        <thead>
+                                        <tr>
+                                            <th>Tx_id</th>
+                                            <th>Time</th>
+                                            <th>Value</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="modalILogOut" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Đăng xuất</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn muốn đăng xuất?</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="btlILOLogout" type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa  fa-sign-out  fa-fw"></i> Logo out</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="modalIAddr" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Address Account</h4>
+                </div>
+                <div class="modal-body">
+                    <label id="txtIAAddr"></label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <script src="../data/morris-data.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script src="../js/Helper.js"></script>
+    <script src="../js/Conf.js"></script>
+    <script src="../js/Proxy.js"></script>
+    <script src="../js/Profile.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
+}
+footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+}
+.imgLanguage{
+    width:25px;
+    height:20px;
+    padding-left: 0px;
+}
+.divImgLanguage{
+    text-align:right;
+}
+label {
+    font-weight: normal !important;
+}
+.imgHikari{
+    margin-top: 5%;
+    text-align: center;
+}
+.htmlLogin {
+      -ms-content-zooming: none;
+      -ms-touch-action: pan-x pan-y;
+}
